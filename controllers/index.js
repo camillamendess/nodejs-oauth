@@ -46,3 +46,12 @@ exports.login = async (req, res, next) => {
 		res.redirect('index');
 	}
 }
+
+exports.checkAuth = (req, res, next) => {
+	const auth = true;
+	if (auth) {
+		next();
+	} else {
+		res.redirect('/');
+	}
+}
